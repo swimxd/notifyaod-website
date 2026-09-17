@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NotifyAOD privacy policy: notification access, local storage, optional accessibility waking, permissions, and deletion.">
+  <title>Privacy policy · NotifyAOD</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header>
+    <a class="brand" href="index.html">NotifyAOD</a>
+    <nav aria-label="Main"><a href="privacy.html" aria-current="page">Privacy</a><a href="support.html">Support</a></nav>
+  </header>
+  <main id="content" class="policy">
+    <h1>NotifyAOD privacy policy</h1>
+    <p class="muted">Last updated September 17, 2026.</p>
+    <p>NotifyAOD is developed by Ali H. This policy describes version 1.1.0 of the Android app, package name <code>com.notifyaod.app</code>, and this website. Earlier development builds used <code>dev.notifyaod</code>.</p>
+    <aside class="notice">NotifyAOD processes notifications on your phone. The app has no internet permission, user accounts, advertising, analytics, crash-reporting service, or automatic uploads. Notification access is broad, even though the app uses it only to control native always-on display behavior.</aside>
+    <nav class="contents" aria-label="Policy sections">
+      <a href="#notifications">Notifications</a><a href="#stored-data">Local data</a><a href="#permissions">Permissions</a><a href="#accessibility">Accessibility</a><a href="#controls">Your controls</a><a href="#contact">Contact</a>
+    </nav>
+
+    <h2 id="notifications">Notification access and on-device processing</h2>
+    <p>With your permission, NotifyAOD receives notification events and reads available notification titles, message text, messaging-style sender identifiers and timestamps, source app/package information, notification identifiers, group information, and notification type and importance. Android can deliver this information while the app’s screen is closed.</p>
+    <p>NotifyAOD uses this information locally to distinguish new or substantively updated notifications from duplicates, apply your app and silent-notification filters, and track notifications received while your phone is locked. It uses lock and screen state to acknowledge pending notifications when you unlock. It does not dismiss your real notifications.</p>
+    <p>Notification text is processed transiently. The app retains derived content fingerprints, identifiers, and pending-notification state in process memory; it does not save message text, sender identifiers, or notification-content fingerprints to disk or send them to the developer. Pending notifications are acknowledged on unlock or cleared as applicable when removed or tracking is interrupted. In-memory tracking disappears when the app process ends.</p>
+    <p>Excluded notifications can still be delivered by Android and inspected to apply filters. An exclusion controls whether a notification affects AOD; it does not narrow Android’s underlying notification-access grant. NotifyAOD does not request access to your contacts database, SMS database, microphone, camera, or location.</p>
+
+    <h2 id="stored-data">Data kept on your phone</h2>
+    <ul>
+      <li><strong>Your choices:</strong> whether automation and compatibility waking are enabled, the selected wake method, notification filters, setup status, and excluded app package names.</li>
+      <li><strong>Display recovery:</strong> the original AOD setting and the app’s intended and last-written values, used to restore your earlier setting and recover from interrupted writes.</li>
+      <li><strong>Device-test observations:</strong> the ON and OFF results you choose, test mode, backend, app version, manufacturer/model and Android build information, and the latest ten saved test-history entries with timestamps.</li>
+    </ul>
+    <p>These records are held in Android app-private storage and are not separately encrypted by NotifyAOD. NotifyAOD disables Android app backup and excludes its data from cloud backup and device-transfer rules. Your preferences and observations remain until changed or the app’s storage is cleared; old test-history entries are removed as the ten-entry limit is exceeded. A completed restoration clears its recovery record. If restoration cannot complete, the record is kept so you can retry.</p>
+    <p>The app queries locally visible launcher apps and uses package names seen by its notification listener to build the app picker. It saves your exclusions, not a complete uploaded app inventory. There is no remote configuration, community-report submission, or server-side account in this version.</p>
+
+    <h2 id="diagnostics">Local diagnostics and information you choose to share</h2>
+    <p>NotifyAOD keeps up to 80 recent diagnostic event entries in process memory. They describe operations and failures without notification text or raw notification identifiers. The oldest entries are removed as new ones arrive, and the event log disappears when the process ends.</p>
+    <p>If you select <strong>Copy diagnostics</strong>, the app writes a report to the Android clipboard. The report includes model/OS/build details, the app’s package and Android user number, permissions and connection states, AOD setting values, pending-notification counts, test observations, and recent redacted events. Nothing is automatically sent. Review the report before pasting it into email, an issue, or another app; the destination then handles the information under its own policies.</p>
+
+    <h2 id="permissions">Display access, Shizuku, and screen waking</h2>
+    <p>To change native AOD, NotifyAOD requests Android’s <code>WRITE_SECURE_SETTINGS</code> permission through an authorized Shizuku service or a computer-based grant. This permission can broadly change protected Android settings; Android does not limit it to AOD. NotifyAOD’s display controller uses the existing <code>Setting_AodSwitchEnable</code> secure setting and records its original value before app-authored changes. It does not automatically try unrelated settings.</p>
+    <p>Shizuku is a separate app with its own setup and behavior. NotifyAOD’s privileged bridge exposes only its fixed permission-grant and wake operations, validates the calling app, and does not provide arbitrary command execution. Notification contents are not sent through that bridge. You control Shizuku authorization in Shizuku.</p>
+    <p>Screen waking is off by default and requires your explicit choice. When enabled, the selected method may issue a Shizuku wake command, use a brief native wake lock, or use the optional accessibility method below. The app declares <code>WAKE_LOCK</code> for the native method. These methods do not collect screen recordings or send data to the developer.</p>
+
+    <h2 id="accessibility">Optional accessibility service</h2>
+    <p>If you select the experimental accessibility wake method and enable its service in Android Settings, NotifyAOD uses an <code>AccessibilityService</code> to open its own brief activity over the lock screen after an eligible AOD change or during a user-started wake test. This can light up the screen; it does not unlock the phone.</p>
+    <p>The service does not subscribe to accessibility events, read screen contents, retrieve window contents, perform gestures, or record other apps. NotifyAOD does not collect, store, or share accessibility data. An in-app explanation appears before you open accessibility settings. You can disable the service at any time in Android Settings, and screen waking remains governed by your separate compatibility choice.</p>
+
+    <h2 id="sharing">Sharing and external services</h2>
+    <p>The Android app does not upload, sell, or share notification data, installed-app information, or local diagnostics with the developer, advertisers, or analytics providers. It includes no advertising identifier tracking or automatic crash-report uploads.</p>
+    <p>Opening the Shizuku guide or another external link launches a separate app or browser. Android, Google Play, Shizuku, your browser, and sites you choose to visit operate under their own policies. Their independent handling of information is separate from NotifyAOD’s local processing.</p>
+
+    <h2 id="controls">Your controls, retention, and deletion</h2>
+    <p>You can turn off <strong>Notification AOD</strong>, change included apps, disable compatibility waking, and revoke notification or accessibility access in Android Settings. To stop NotifyAOD from receiving notification content from Android, revoke its notification access.</p>
+    <p>Before clearing storage or uninstalling, use <strong>Settings → Help &amp; device test → Disable and restore</strong> and confirm that restoration finishes. This preserves the information needed to restore the original AOD value. Clearing storage or uninstalling removes local choices, test history, and recovery records, but can prevent unfinished restoration; you may need to restore AOD manually in phone Settings.</p>
+    <p>There is no NotifyAOD account or developer-side notification database to delete. Clearing the app does not remove a diagnostic report you copied elsewhere or a support message you sent. To request deletion of a private support message, contact the address below. Support correspondence is used to answer the request and retained only as needed to resolve it, handle related follow-up, or meet legal obligations; email-provider backups and required records may persist under the provider’s policies.</p>
+
+    <h2 id="contact">Contact</h2>
+    <p>For privacy questions, support, or requests concerning information you sent directly, contact Ali H at <a href="mailto:blurbapp.support@gmail.com?subject=NotifyAOD%20privacy">blurbapp.support@gmail.com</a>. Please include “NotifyAOD” in the subject.</p>
+    <p>General issues can also be reported in the <a href="https://github.com/swimxd/notifyaod-website/issues">public website issue tracker</a>. Public reports are visible to others: do not include private messages, notification contents, signing keys, or other sensitive information.</p>
+
+    <h2 id="website">This website</h2>
+    <p>This website is hosted on GitHub Pages. Its pages use local styles and system fonts, with no analytics scripts, advertising, tracking cookies set by these pages, or embedded submission forms. GitHub logs visitors’ IP addresses for security and may process other connection information under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. Using GitHub’s issue tracker or sending email shares the information you submit with those services.</p>
+
+    <h2 id="changes">Changes to this policy</h2>
+    <p>This page will be updated when NotifyAOD’s data practices change, with the revision date shown above. Features that require additional access or consent will explain that in the app. This policy does not describe remote reporting or configuration features that are not part of version 1.1.0.</p>
+  </main>
+  <footer>By <a href="https://github.com/swimxd">Ali H</a> · <a href="privacy.html">Privacy policy</a></footer>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Setup notes, device testing, and support for NotifyAOD.">
+  <title>Help &amp; feedback · NotifyAOD</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header>
+    <a class="brand" href="index.html">NotifyAOD</a>
+    <nav aria-label="Main"><a href="privacy.html">Privacy</a><a href="support.html" aria-current="page">Support</a></nav>
+  </header>
+  <main id="content">
+    <h1>Help &amp; feedback.</h1>
+    <p class="lead">A few things to check before getting in touch.</p>
+    <h2>Getting started</h2>
+    <ol>
+      <li>Set your phone’s native Always-On Display to All day, keeping your preferred style. Disable other AOD automation while testing.</li>
+      <li>Follow NotifyAOD’s Display access → Notification access → Test &amp; finish setup. Shizuku may require installation, pairing, starting, and authorization.</li>
+      <li>Run the silent display test and record on and off separately. A successful permission grant or setting readback does not confirm a visible display change.</li>
+    </ol>
+    <h2>Device compatibility</h2>
+    <p>Native AOD behavior depends on your phone and exact OS build. The current app checks an existing OEM setting; it does not support every Android device or create a missing key. If setup cannot detect it, enable native AOD once in phone Settings and return to recheck.</p>
+    <p>If silent switching fails, the app offers optional compatibility waking. Shizuku waking requires its service to be available; native wake-lock and accessibility methods are experimental. There is no automatic fallback between methods.</p>
+    <h2>Before uninstalling or changing builds</h2>
+    <p>Use <strong>Settings → Help &amp; device test → Disable and restore</strong> and confirm the original setting is restored. The older <code>dev.notifyaod</code> beta and <code>com.notifyaod.app</code> release are separate installations. Disable and restore the old one before using the new one.</p>
+    <div class="links">
+      <a href="mailto:blurbapp.support@gmail.com?subject=NotifyAOD%20support"><strong>Email support</strong><span>Use “NotifyAOD” in the subject. This is also the contact for private privacy questions.</span></a>
+      <a href="https://github.com/swimxd/notifyaod-website/issues"><strong>Public issues &amp; feedback</strong><span>Report a bug or suggest an improvement. A GitHub account is required.</span></a>
+    </div>
+    <aside class="notice">Include your app version, phone model, OS build, and what happened. Review diagnostics and screenshots before sharing, and leave out notification contents or other private information.</aside>
+  </main>
+  <footer>By <a href="https://github.com/swimxd">Ali H</a> · <a href="privacy.html">Privacy policy</a></footer>
+</body>
+</html>
