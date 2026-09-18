@@ -19,12 +19,18 @@
     <h2>Getting started</h2>
     <ol>
       <li>Set your phone’s native Always-On Display to All day, keeping your preferred style. Disable other AOD automation while testing.</li>
-      <li>Follow NotifyAOD’s Display access → Notification access → Test &amp; finish setup. Shizuku may require installation, pairing, starting, and authorization.</li>
-      <li>Run the silent display test and record on and off separately. A successful permission grant or setting readback does not confirm a visible display change.</li>
+      <li>Follow NotifyAOD’s three-step setup: Display access → Notifications → Screen waking. Choose Shizuku (no computer) or guided ADB (Windows, Mac or Linux with a USB cable) for the one-time display permission.</li>
+      <li>Enable the phone’s “Wake screen for notifications” setting, then confirm in NotifyAOD. You can also skip and try setting-only control. Tests and observations are optional.</li>
     </ol>
     <h2>Device compatibility</h2>
     <p>Native AOD behavior depends on your phone and exact OS build. The current app checks an existing OEM setting; it does not support every Android device or create a missing key. If setup cannot detect it, enable native AOD once in phone Settings and return to recheck.</p>
-    <p>If silent switching fails, the app offers optional compatibility waking. Shizuku waking requires its service to be available; native wake-lock and accessibility methods are experimental. There is no automatic fallback between methods.</p>
+    <p>Some phones, including a reported OnePlus 15 running OxygenOS 16, apply AOD changes only after the display wakes. Search phone Settings for “Wake screen for notifications”; on OxygenOS/ColorOS look under Notifications &amp; Quick Settings (or Notifications &amp; status bar) → Lock screen. This may help with arrivals but not with clearing notifications. Menu names vary. NotifyAOD cannot verify this setting automatically.</p>
+    <p>If that does not help, open <strong>Screen waking → Still not working? Other wake methods</strong>. Accessibility is the recommended optional fallback because it does not need Shizuku running; it briefly opens the app’s own activity and may flash. Shizuku waking requires its service to remain running and authorized. Native wake lock remains an experimental advanced option. There is no automatic fallback.</p>
+    <h2>OxygenOS / ColorOS permission help</h2>
+    <p>Some builds may require temporarily turning ON <strong>Disable system optimization</strong> in Developer options before the Shizuku or ADB grant. After permission is granted, turn that switch OFF again. This changes broader system protection, not just NotifyAOD. Recheck access afterward; behavior varies by build.</p>
+    <p>To enable Developer options, open About device → Version and tap Build number seven times, entering your PIN if asked. Then find Developer options under System &amp; updates or Additional settings. The app links to the supported Developer options page; individual OEM switches may not support direct links.</p>
+    <h2>Status and troubleshooting</h2>
+    <p>Home shows Ready, Setup needed or Paused. Ready means required permissions and connections are available; it does not certify physical AOD behavior. Use <strong>Not working?</strong> for corrective steps. If you skip wake setup, a later visit offers a dismissible check-in. Fresh installs exclude silent notifications by default; upgrades preserve your choices.</p>
     <h2>Before uninstalling or changing builds</h2>
     <p>Use <strong>Settings → Help &amp; device test → Disable and restore</strong> and confirm the original setting is restored. The older <code>dev.notifyaod</code> beta and <code>com.notifyaod.app</code> release are separate installations. Disable and restore the old one before using the new one.</p>
     <div class="links">

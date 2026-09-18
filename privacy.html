@@ -16,7 +16,7 @@
   <main id="content" class="policy">
     <h1>NotifyAOD privacy policy</h1>
     <p class="muted">Last updated September 17, 2026.</p>
-    <p>NotifyAOD is developed by Ali H. This policy describes version 1.1.0 of the Android app, package name <code>com.notifyaod.app</code>, and this website. Earlier development builds used <code>dev.notifyaod</code>.</p>
+    <p>NotifyAOD is developed by Ali H. This policy describes version 1.1.1 of the Android app, package name <code>com.notifyaod.app</code>, and this website. Earlier development builds used <code>dev.notifyaod</code>.</p>
     <aside class="notice">NotifyAOD processes notifications on your phone. The app has no internet permission, user accounts, advertising, analytics, crash-reporting service, or automatic uploads. Notification access is broad, even though the app uses it only to control native always-on display behavior.</aside>
     <nav class="contents" aria-label="Policy sections">
       <a href="#notifications">Notifications</a><a href="#stored-data">Local data</a><a href="#permissions">Permissions</a><a href="#accessibility">Accessibility</a><a href="#controls">Your controls</a><a href="#contact">Contact</a>
@@ -30,7 +30,7 @@
 
     <h2 id="stored-data">Data kept on your phone</h2>
     <ul>
-      <li><strong>Your choices:</strong> whether automation and compatibility waking are enabled, the selected wake method, notification filters, setup status, and excluded app package names.</li>
+      <li><strong>Your choices:</strong> whether automation and compatibility waking are enabled, the selected wake method, notification filters, setup status, whether a skipped-wake follow-up is pending or dismissed, and excluded app package names.</li>
       <li><strong>Display recovery:</strong> the original AOD setting and the app’s intended and last-written values, used to restore your earlier setting and recover from interrupted writes.</li>
       <li><strong>Device-test observations:</strong> the ON and OFF results you choose, test mode, backend, app version, manufacturer/model and Android build information, and the latest ten saved test-history entries with timestamps.</li>
     </ul>
@@ -44,7 +44,8 @@
     <h2 id="permissions">Display access, Shizuku, and screen waking</h2>
     <p>To change native AOD, NotifyAOD requests Android’s <code>WRITE_SECURE_SETTINGS</code> permission through an authorized Shizuku service or a computer-based grant. This permission can broadly change protected Android settings; Android does not limit it to AOD. NotifyAOD’s display controller uses the existing <code>Setting_AodSwitchEnable</code> secure setting and records its original value before app-authored changes. It does not automatically try unrelated settings.</p>
     <p>Shizuku is a separate app with its own setup and behavior. NotifyAOD’s privileged bridge exposes only its fixed permission-grant and wake operations, validates the calling app, and does not provide arbitrary command execution. Notification contents are not sent through that bridge. You control Shizuku authorization in Shizuku.</p>
-    <p>Screen waking is off by default and requires your explicit choice. When enabled, the selected method may issue a Shizuku wake command, use a brief native wake lock, or use the optional accessibility method below. The app declares <code>WAKE_LOCK</code> for the native method. These methods do not collect screen recordings or send data to the developer.</p>
+    <p>The app can open phone settings, the privacy/support website, GitHub issues, Shizuku’s Play Store listing, and the official Android tools download page in another app when you choose a link. Those apps and sites handle visits under their own policies. “Copy ADB command” copies only the command with this app’s package and Android user number. Nothing is submitted automatically.</p>
+    <p>Additional screen waking by NotifyAOD is off by default and requires your explicit choice. When enabled, the selected method may issue a Shizuku wake command, use a brief native wake lock, or use the optional accessibility method below. The app declares <code>WAKE_LOCK</code> for the native method. These methods do not collect screen recordings or send data to the developer.</p>
 
     <h2 id="accessibility">Optional accessibility service</h2>
     <p>If you select the experimental accessibility wake method and enable its service in Android Settings, NotifyAOD uses an <code>AccessibilityService</code> to open its own brief activity over the lock screen after an eligible AOD change or during a user-started wake test. This can light up the screen; it does not unlock the phone.</p>
@@ -67,7 +68,7 @@
     <p>This website is hosted on GitHub Pages. Its pages use local styles and system fonts, with no analytics scripts, advertising, tracking cookies set by these pages, or embedded submission forms. GitHub logs visitors’ IP addresses for security and may process other connection information under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. Using GitHub’s issue tracker or sending email shares the information you submit with those services.</p>
 
     <h2 id="changes">Changes to this policy</h2>
-    <p>This page will be updated when NotifyAOD’s data practices change, with the revision date shown above. Features that require additional access or consent will explain that in the app. This policy does not describe remote reporting or configuration features that are not part of version 1.1.0.</p>
+    <p>This page will be updated when NotifyAOD’s data practices change, with the revision date shown above. Features that require additional access or consent will explain that in the app. This policy does not describe remote reporting or configuration features that are not part of version 1.1.1.</p>
   </main>
   <footer>By <a href="https://github.com/swimxd">Ali H</a> · <a href="privacy.html">Privacy policy</a></footer>
 </body>
