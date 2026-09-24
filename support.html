@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Setup notes, device testing, and support for NotifyAOD.">
+  <meta name="description" content="Setup, Free and Pro, troubleshooting, and support for NotifyAOD.">
   <title>Help &amp; feedback · NotifyAOD</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,28 +16,38 @@
   <main id="content">
     <h1>Help &amp; feedback.</h1>
     <p class="lead">A few things to check before getting in touch.</p>
+
     <h2>Getting started</h2>
     <ol>
-      <li>Set your phone’s native Always-On Display to All day, keeping your preferred style. Disable other AOD automation while testing.</li>
-      <li>Follow NotifyAOD’s three-step setup: Display access → Notifications → Screen waking. Choose Shizuku (no computer) or guided ADB (Windows, Mac or Linux with a USB cable) for the one-time display permission.</li>
-      <li>Enable the phone’s “Wake screen for notifications” setting, then confirm in NotifyAOD. You can also skip and try setting-only control. Tests and observations are optional.</li>
+      <li>In phone Settings, set Always-On Display to All day. Turn off any other AOD automation.</li>
+      <li>Follow NotifyAOD’s three setup steps: display access (with Shizuku, or with a computer via USB), notification access, and screen waking.</li>
+      <li>Lock your phone and wait for a notification. When Home asks “Is Always-On Display working?”, tap <strong>Yes, it’s working</strong>.</li>
     </ol>
+    <p>Buttons that open phone Settings go straight to the right switch where Android allows it. Otherwise a short message at the bottom of the screen tells you what to tap.</p>
+
+    <h2>Free and Pro</h2>
+    <p>Free covers one app of your choice, with no time limit. Change it anytime in <strong>Apps &amp; notifications</strong>. Pro is a one-time purchase that unlocks every app. Once you’ve confirmed AOD works, you can try Pro free for 7 days, one time only.</p>
+    <p>If you reinstall or switch phones, tap <strong>Restore purchases</strong> in the Pro screen. If the price doesn’t load, check your connection and that the Play Store is signed in, then tap <strong>Try again</strong>. The Pro screen shows a short reason; include it if you contact support.</p>
+
+    <h2>If NotifyAOD pauses</h2>
+    <p>Home explains why and what to do. If you changed AOD in phone Settings, choose <strong>Resume NotifyAOD</strong> to hand control back, or <strong>Turn off NotifyAOD</strong> to keep your phone’s setting. Allow health alerts (in <strong>Settings → Permissions &amp; reliability</strong>) to be told when this happens.</p>
+    <p>While your phone is unlocked, the AOD switch in phone Settings may show Off. That’s normal: NotifyAOD turns it on only when you have new notifications.</p>
+
     <h2>Device compatibility</h2>
-    <p>Native AOD behavior depends on your phone and exact OS build. The current app checks an existing OEM setting; it does not support every Android device or create a missing key. If setup cannot detect it, enable native AOD once in phone Settings and return to recheck.</p>
-    <p>Some phones, including a reported OnePlus 15 running OxygenOS 16, apply AOD changes only after the display wakes. Search phone Settings for “Wake screen for notifications”; on OxygenOS/ColorOS look under Notifications &amp; Quick Settings (or Notifications &amp; status bar) → Lock screen. This may help with arrivals but not with clearing notifications. Menu names vary. NotifyAOD cannot verify this setting automatically.</p>
-    <p>If that does not help, open <strong>Screen waking → Still not working? Other wake methods</strong>. Accessibility is the recommended optional fallback because it does not need Shizuku running; it briefly opens the app’s own activity and may flash. Shizuku waking requires its service to remain running and authorized. Native wake lock remains an experimental advanced option. There is no automatic fallback.</p>
+    <p>NotifyAOD controls your phone’s built-in AOD setting and works on Android 13 or later. Behavior varies by phone and OS build, and not every device is supported.</p>
+    <p>Some phones, including OnePlus with OxygenOS 16, update AOD only when the screen wakes. Turn on “Wake screen when a notification is received”; on OxygenOS it’s under Notifications &amp; Quick Settings. If AOD still doesn’t update, open <strong>Settings → Screen waking → Can’t find it or still not working?</strong> and try Accessibility waking.</p>
+
     <h2>OxygenOS / ColorOS permission help</h2>
-    <p>Some builds may require temporarily turning ON <strong>Disable system optimization</strong> in Developer options before the Shizuku or ADB grant. After permission is granted, turn that switch OFF again. This changes broader system protection, not just NotifyAOD. Recheck access afterward; behavior varies by build.</p>
-    <p>To enable Developer options, open About device → Version and tap Build number seven times, entering your PIN if asked. Then find Developer options under System &amp; updates or Additional settings. The app links to the supported Developer options page; individual OEM switches may not support direct links.</p>
-    <h2>Status and troubleshooting</h2>
-    <p>Home shows Ready, Setup needed or Paused. Ready means required permissions and connections are available; it does not certify physical AOD behavior. Use <strong>Not working?</strong> for corrective steps. If you skip wake setup, a later visit offers a dismissible check-in. Fresh installs exclude silent notifications by default; upgrades preserve your choices.</p>
-    <h2>Before uninstalling or changing builds</h2>
-    <p>Use <strong>Settings → Help &amp; device test → Disable and restore</strong> and confirm the original setting is restored. The older <code>dev.notifyaod</code> beta and <code>com.notifyaod.app</code> release are separate installations. Disable and restore the old one before using the new one.</p>
+    <p>Some builds need <strong>Disable system optimization</strong> turned on in Developer options before granting display access. Turn it off again afterwards. To show Developer options, go to About device → Version and tap Build number seven times.</p>
+
+    <h2>Before uninstalling</h2>
+    <p>Use <strong>Settings → Help &amp; about → Disable and restore</strong> and wait until your original display setting is restored.</p>
+
     <div class="links">
-      <a href="mailto:blurbapp.support@gmail.com?subject=NotifyAOD%20support"><strong>Email support</strong><span>Use “NotifyAOD” in the subject. This is also the contact for private privacy questions.</span></a>
+      <a href="mailto:blurbapp.support@gmail.com?subject=NotifyAOD%20support"><strong>Email support</strong><span>Put “NotifyAOD” in the subject. This is also the contact for privacy questions.</span></a>
       <a href="https://github.com/swimxd/notifyaod-website/issues"><strong>Public issues &amp; feedback</strong><span>Report a bug or suggest an improvement. A GitHub account is required.</span></a>
     </div>
-    <aside class="notice">Include your app version, phone model, OS build, and what happened. Review diagnostics and screenshots before sharing, and leave out notification contents or other private information.</aside>
+    <aside class="notice">Include your app version and phone model. <strong>Settings → Advanced → Copy diagnostics</strong> copies a report you can paste. Review it first, and leave out notification contents or other private information.</aside>
   </main>
   <footer>By <a href="https://github.com/swimxd">Ali H</a> · <a href="privacy.html">Privacy policy</a></footer>
 </body>
